@@ -1,0 +1,104 @@
+{% extends "base.html" %}
+
+{% block mycontent %}
+<!--welcome-hero start -->
+<section id="welcome-hero" class="welcome-hero">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 text-center">
+                <div class="header-text">
+                    <h2>{{index.intro.main_text}}</h2>
+                    <p>{{index.intro.sub_text}}</p>
+                    <!--<a href="assets/download/browney.txt" download>download resume</a>-->
+                </div><!--/.header-text-->
+            </div><!--/.col-->
+        </div><!-- /.row-->
+    </div><!-- /.container-->
+
+</section><!--/.welcome-hero-->
+<!--welcome-hero end -->
+
+<!--about start -->
+<section id="about" class="about">
+    <!--<div class="section-heading text-center">
+        <h2>about me</h2>
+    </div>-->
+    <div class="container">
+        <div class="about-content">
+            <div class="row">
+                <div class="col-sm-6">
+                    <div class="single-about-txt">
+                        <h3>
+                            {{index.info.main_text}}
+                        </h3>
+                        <p>
+                            {{index.info.sub_text}}
+                        </p>
+                        <div class="row">
+                            <!--
+                            <div class="col-sm-4">
+                                <div class="single-about-add-info">
+                                    <h3></h3>
+                                    <p></p>
+                                </div>
+                            </div>
+                            <div class="col-sm-4">
+                                <div class="single-about-add-info">
+                                    <h3>email</h3>
+                                    <p>browny@info.com</p>
+                                </div>
+                            </div>
+                            <div class="col-sm-4">
+                                <div class="single-about-add-info">
+                                    <h3>website</h3>
+                                    <p>www.brownsine.com</p>
+                                </div>
+                            </div>-->
+                        </div>
+                        <div id="apply" class="apply test-center">
+                            <div class="heading">
+                                <h2> 지금 바로 신청하기</h2>
+                            </div>
+                            <div class="forms">
+                                <input type="text" id="apply-email" placeholder="booup@gmail.com" minlength="5"/>
+                                <select id="apply-value">
+                                    {% for item in index.dropbox %}
+                                    <option>{{ item }}</option>
+                                    {% endfor %}
+                                </select>
+                                <button id="apply-button" class="apply-button">제출</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-offset-1 col-sm-5">
+                    <div class="single-about-img">
+                        <img src="/assets/images/{{index.info.img}}" alt="profile_image">
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</section><!--/.about-->
+
+<!--about end -->
+
+<!-- items start-->
+<section id="items" class="items">
+    <div class="heading text-center">
+        <h2>살펴보기</h2>
+    </div>
+    <div id="item-container" class="item-container">
+        {% for item in index.details %}
+        <div class="item-box">
+            <img src="/assets/images/{{item.img}}" alt="{{item.title}}">
+            <h2>{{item.title}}</h2>
+            <p>{{item.content}}</p>
+        </div>
+        {% endfor %}
+    </div>
+</section>
+
+
+{% endblock %}

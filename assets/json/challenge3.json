@@ -1,0 +1,14 @@
+{
+    "intro":{
+        "title":"제목제목",
+        "content":"내용입니다. 내용입니다. 내용입니다. 내용입니다"
+    },
+    
+    "name": "Education",
+
+    "details":{
+        "text1":"Hooking Context1",
+        "img":"items/p3.jpg",
+        "text2":"Hooking Context2"
+    }
+}

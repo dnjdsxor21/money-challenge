@@ -1,0 +1,57 @@
+{% extends "base.html" %}
+
+{% block mycontent %}
+<!--content-view start -->
+<section id="content-view" class="content-view">
+	<div class="container">
+			<div class="content-txt">
+				<h1>
+					{{ data.intro.title }}
+				</h1>
+				<p>
+					{{ data.intro.content}}
+				</p>
+			</div>
+			
+			<div id="apply" class="apply test-center">
+				<div class="heading">
+					<h2> 지금 바로 신청하기</h2>
+				</div>
+				<div class="forms">
+					<input type="text" id="apply-email" placeholder="booup@gmail.com" minlength="5"/>
+					<select id="apply-value">
+						{% for item in index.dropbox %}
+						<option>{{item}}</option>
+						{% endfor %}
+					</select>
+					<button id="apply-button" class="apply-button">제출</button>
+				</div>
+			</div>
+</div>
+</section>
+<!--content-view-->
+
+<!--about end -->
+
+<!--education start -->
+<section id="education" class="education">
+	<div class="section-heading text-center">
+		<h2>{{data.name}}</h2>
+	</div>
+</section><!--/.education-->
+<!--education end -->
+<section id="content" class="content">
+	<div class="content-container">
+		<div class="content-box">
+			<p> {{data.details.text1}}</p>
+		</div>
+		<div class="content-box">
+			<img src="/assets/images/{{data.details.img}}", alt="">
+		</div>
+		<div class="content-box">
+			<p> {{data.details.text2}}</p>
+		</div>
+	</div>
+</section>
+
+{% endblock %}
