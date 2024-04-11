@@ -64,6 +64,9 @@
 
 	.single-horizontal-timeline {max-width: 350px;margin: 30px auto;}
 
+	.item-box img{
+		height: 125px;
+	}
 	.content-container {width:95%; margin: 0, 0; padding:0, 0;}
 	.content-view .apply{
 		width:95%;   

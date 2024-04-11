@@ -170,10 +170,16 @@ function refreshPage() {
         });
     });
 
-	console.log('hello');
 	var email = document.querySelector('#apply-email');
 	var option = document.querySelector('#apply-value');
 	var submitBtn = document.querySelector('#apply-button');
+	var pageTitle = document.querySelector("#content-view .content-txt h1").innerText;
+
+	if (pageTitle.includes('스마트')){
+		option.value = option[1].value;
+	} else if (pageTitle.includes('블로그')){
+		option.value = option[2].value;
+	}
 
 	submitBtn.addEventListener('click', function(e) { 
 		e.preventDefault();
@@ -215,6 +221,8 @@ function refreshPage() {
             window.location.href = link;
         });
     });
+
+
 };
 document.addEventListener('DOMContentLoaded', function() {
 	refreshPage();
