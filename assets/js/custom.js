@@ -127,13 +127,40 @@ $(document).ready(function(){
 
 //================================================================
 function refreshPage() {
-	const txt = document.querySelector("#welcome-hero .header-text h2");
+	const txt1 = document.querySelector("#welcome-hero .header-text h2");
+	const txt2 = document.querySelector("#welcome-hero .header-text p");
+	const txt3 = document.querySelector("#about .single-about-txt h3");
+	const txt4 = document.querySelector("#about .single-about-txt p");
+	const txt5 = document.querySelector("#content-view .content-txt p");
+	const txt6 = document.querySelectorAll("#content .content-container div h3")[0];
+	const txt7 = document.querySelectorAll("#content .content-container div p")[0];
+	const txt8 = document.querySelectorAll("#content .content-container div h3")[1];
+	const txt9 = document.querySelectorAll("#content .content-container div p")[1];
+	let elements = [txt1, txt2, txt3, txt4, txt5, txt6, txt7, txt8, txt9];
+	for (let i = 0; i < elements.length; i++) {
+	if (elements[i] && elements[i].innerText.trim() !== "") {
+		elements[i].innerHTML = elements[i].innerText;
+		}
+	}
 
-if (txt && txt.innerText.trim() !== "") {
-    txt.innerHTML = txt.innerText;
-}
+	document.querySelectorAll("#content .content-container .content-box").forEach(function(box) {
+		if(box.firstElementChild.tagName!="IMG"){
 
+			box.addEventListener('click', function() {
+				var content = this.lastElementChild;
+				console.log(content);
+				  if (content.style.display === 'none') {
+					  content.style.display = 'block';
+					} else {
+					  content.style.display = 'none';
+					}
+			  });
+		}
+		
+	  });
+	  
 
+	
 
     var menuItems = document.querySelectorAll('.smooth-menu');
     menuItems.forEach(function(item) {
@@ -161,7 +188,7 @@ if (txt && txt.innerText.trim() !== "") {
 			.then(response => {
 				if(response.ok) {
 					// 요청이 성공적으로 처리되면, 사용자에게 알림을 띄웁니다.
-					alert(`이메일: ${email.value}\n챌린지: ${option.value}\n예약 완료`);
+					alert(`100명 모집시 챌린지를 시작합니다!\n\n이메일: ${email.value}\n챌린지: ${option.value}`);
 					// 입력 필드를 초기화합니다.
 					email.value = "";
 					//option.value = "";

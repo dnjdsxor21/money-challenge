@@ -15,7 +15,7 @@
 			
 			<div id="apply" class="apply test-center">
 				<div class="heading">
-					<h2> 지금 바로 신청하기</h2>
+					<h2>지금 <b>무료로</b> 챌린지 신청하기</h2>
 				</div>
 				<div class="forms">
 					<input type="text" id="apply-email" placeholder="booup@gmail.com" minlength="5"/>
@@ -43,13 +43,15 @@
 <section id="content" class="content">
 	<div class="content-container">
 		<div class="content-box">
-			<p> {{data.details.text1}}</p>
-		</div>
-		<div class="content-box">
 			<img src="/assets/images/{{data.details.img}}", alt="">
 		</div>
-		<div class="content-box">
-			<p> {{data.details.text2}}</p>
+		<div class="content-box" style="cursor: pointer">
+			<h3>{{data.details.text1.title}}<small>(클릭)</small></h3>
+			<p style="display:none"> {{data.details.text1.content}}</p>
+		</div>
+		<div class="content-box" style="cursor: pointer">
+			<h3>{{data.details.text2.title}}<small>(클릭)</small></h3>
+			<p style="display:none"> {{data.details.text2.content}}</p>
 		</div>
 	</div>
 </section>
