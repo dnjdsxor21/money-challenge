@@ -173,11 +173,11 @@ function refreshPage() {
 	var email = document.querySelector('#apply-email');
 	var option = document.querySelector('#apply-value');
 	var submitBtn = document.querySelector('#apply-button');
-	var pageTitle = document.querySelector("#content-view .content-txt h1").innerText;
+	var pageTitle = document.querySelector("#content-view .content-txt h1");
 
-	if (pageTitle.includes('스마트')){
+	if (pageTitle && pageTitle.innerText.includes('스마트')){
 		option.value = option[1].value;
-	} else if (pageTitle.includes('블로그')){
+	} else if (pageTitle && pageTitle.innerText.includes('블로그')){
 		option.value = option[2].value;
 	}
 
@@ -214,7 +214,7 @@ function refreshPage() {
 		}
 	});
 
-	var items = document.querySelectorAll('.item-box');
+	var items = document.querySelectorAll('#items .item-box');
     items.forEach(function(item, index) {
         item.addEventListener('click', function() {
             var link = 'challenge/' + (index + 1);
